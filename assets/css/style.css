@@ -1,26 +1,124 @@
-.project-card {
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 12px;
-  padding: 14px 16px;
+/* ---------- Base polish (works in light + dark) ---------- */
+:root{
+  --bg: #ffffff;
+  --fg: #111827;
+  --muted: #6b7280;
+  --card: rgba(255,255,255,0.70);
+  --border: rgba(17,24,39,0.12);
+  --shadow: 0 10px 24px rgba(0,0,0,0.08);
+  --link: #2563eb;
+  --btnbg: rgba(17,24,39,0.04);
+  --btnbd: rgba(17,24,39,0.20);
+  --badge-bg: rgba(17,24,39,0.04);
+  --badge-bd: rgba(17,24,39,0.18);
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --card: rgba(17,24,39,0.65);
+    --border: rgba(229,231,235,0.10);
+    --shadow: 0 14px 34px rgba(0,0,0,0.45);
+    --link: #93c5fd;
+    --btnbg: rgba(229,231,235,0.06);
+    --btnbd: rgba(229,231,235,0.18);
+    --badge-bg: rgba(229,231,235,0.06);
+    --badge-bd: rgba(229,231,235,0.16);
+  }
+}
+
+/* Cayman overrides */
+body{
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+a{ color: var(--link) !important; }
+
+.main-content{
+  max-width: 980px;
+}
+
+.page-header{
+  background-image: none !important;
+  background: linear-gradient(135deg, rgba(37,99,235,0.14), rgba(147,197,253,0.06)) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (prefers-color-scheme: dark){
+  .page-header{
+    background: linear-gradient(135deg, rgba(147,197,253,0.12), rgba(37,99,235,0.06)) !important;
+  }
+}
+
+.page-header .project-name,
+.page-header .project-tagline{
+  color: var(--fg) !important;
+}
+
+.project-tagline{
+  opacity: 0.9;
+}
+
+/* Cards */
+.project-card{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
   margin: 16px 0;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
 }
 
-.badges { margin-top: 8px; }
-
-.badge {
+/* Buttons */
+.btn{
   display: inline-block;
-  padding: 4px 10px;
-  margin: 4px 6px 0 0;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.25);
-  font-size: 0.85rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.3);
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--btnbd);
+  background: var(--btnbg);
   text-decoration: none;
-  margin-right: 8px;
+  margin: 8px 10px 0 0;
+  color: var(--fg) !important;
 }
+
+.btn:hover{
+  transform: translateY(-1px);
+  transition: transform 120ms ease;
+}
+
+/* Badges */
+.badges{ margin-top: 10px; }
+
+.badge{
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 6px 8px 0 0;
+  border-radius: 999px;
+  border: 1px solid var(--badge-bd);
+  background: var(--badge-bg);
+  font-size: 0.85rem;
+  color: var(--fg);
+  opacity: 0.95;
+}
+
+/* Make text look less “bland” */
+h1, h2, h3{
+  letter-spacing: -0.02em;
+}
+
+p, li{
+  color: var(--fg);
+}
+
+hr{
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Tighten spacing */
+.main-content h1{ margin-top: 0.6rem; }
