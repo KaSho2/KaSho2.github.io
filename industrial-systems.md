@@ -1,3 +1,8 @@
+---
+layout: default
+title: Industrial & Systems Engineering
+---
+
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Industrial & Systems Engineering
@@ -22,3 +27,4 @@
   {% endif %}
 </div>
 {% endfor %}
+
