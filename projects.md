@@ -5,8 +5,6 @@ title: Projects
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-#All Projects
-
 {% for p in site.projects %}
 <div class="project-card">
   <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
@@ -27,4 +25,5 @@ title: Projects
 </div>
 
 {% endfor %}
+
 
