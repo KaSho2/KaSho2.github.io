@@ -5,13 +5,17 @@ title: Resume
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# Resume
+<div class="project-card">
+  <h2 style="margin-top:0;">Praharshith K Jamalapuram</h2>
+  <div style="color: var(--muted); margin-top:4px;">
+    Madison, WI • Manufacturing • Industrial & Systems • Data Analytics • ML
+  </div>
 
-## Praharshith K Jamalapuram  
-### Madison, WI
-
-Industrial & Systems Engineering • Mechanical Engineering • Mechanical Design • Manufacturing • Data Analytics • ML
----
+  <div style="margin-top:12px;">
+    <a class="btn" href="/assets/pdfs/Resume.pdf">Download Resume (PDF)</a>
+    <a class="btn" href="/projects/">Browse Projects</a>
+  </div>
+</div>
 
 ## Skills Snapshot
 <div class="badges">
@@ -60,5 +64,6 @@ Tamil Nadu, IND
 - Data Analytics & Machine Learning  
 
 <a class="btn" href="/projects/">View All Projects</a>
+
 
 
