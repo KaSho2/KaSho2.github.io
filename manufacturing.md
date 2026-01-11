@@ -1,3 +1,8 @@
+---
+layout: default
+title: Manufacturing & Mechanical Engineering
+---
+
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Manufacturing & Mechanical Engineering
@@ -22,3 +27,4 @@
   {% endif %}
 </div>
 {% endfor %}
+
