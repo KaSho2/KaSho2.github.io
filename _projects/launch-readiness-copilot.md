@@ -31,10 +31,11 @@ Designed a pilot concept for a decision-support workflow that helps engineers ev
 
 **Skills:** SPC framing, capability reporting concepts, workflow design, scope control, risk mitigation, leadership-ready communication.
 
-**Read more (choose one):**
+**Read more:**
 - [Executive Slide Deck (PDF)](/assets/pdfs/Process%20Capability%20%26%20Launch%20Readiness%20Copilot%20-%20Executive%20Slide%20Deck.pdf)
 - [Tech Insights & Recommendations (PDF)](/assets/pdfs/Process%20Capability%20%26%20Launch%20Readiness%20Copilot%20-%20Tech%20Insights%20%26%20Recommendations%20.pdf)
 - [Summary Memo (PDF)](/assets/pdfs/Summary%20Memo%20-%209082624322%20(1).pdf)
+
 
 
 
