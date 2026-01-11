@@ -1,5 +1,5 @@
 title: Praharshith K Jamalapuram | Engineering Portfolio
-description: Manufacturing • Industrial & Systems • Data Analytics • ML
+# description: Manufacturing • Industrial & Systems • Data Analytics • ML
 theme: jekyll-theme-cayman
 
 permalink: pretty
@@ -14,4 +14,5 @@ defaults:
       path: ""
       type: "projects"
     values:
+
       layout: page
