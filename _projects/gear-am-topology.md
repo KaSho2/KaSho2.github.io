@@ -9,6 +9,8 @@ skills:
   - Design for Additive Manufacturing (DfAM)
   - Metal Additive Manufacturing cost/time estimation
   - Engineering report writing
+summary: Investigated additive manufacturing methods for gear production, evaluating mechanical performance, manufacturability, and design tradeoffs.
+
 ---
 
 # Sustainable & Economic Additive Manufacturing of Gears (Topology Optimization + Generative Design)
@@ -24,4 +26,5 @@ Designed and optimized a spur gear for metal additive manufacturing by combining
 
 **Skills:** SolidWorks, ANSYS Workbench, Fusion 360 (Generative Design + Topology Optimization), FEA, DfAM, cost estimation, technical documentation.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/Final%20Draft%20Maxi%20Project%20Report%20-%209054%20%26%209199.docx.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/Final%20Draft%20Maxi%20Project%20Report%20-%209054%20%26%209199.docx.pdf)
+
