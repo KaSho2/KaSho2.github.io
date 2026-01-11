@@ -1,3 +1,8 @@
+---
+layout: default
+title: Projects
+---
+
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # All Projects
@@ -20,4 +25,5 @@
     <a class="btn" href="{{ p.pdf }}">Read Full Report (PDF)</a>
   {% endif %}
 </div>
+
 {% endfor %}
