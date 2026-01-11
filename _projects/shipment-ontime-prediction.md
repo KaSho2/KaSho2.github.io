@@ -11,6 +11,7 @@ skills:
   - Model selection (GridSearchCV)
   - Feature engineering
   - Classification metrics
+summary: Developed predictive models to analyze shipment delays using historical logistics data and performance metrics.
 ---
 
 # Can We Predict if a Shipment Will Be On Time?
@@ -26,4 +27,5 @@ Built classification models to predict on-time shipment outcomes using structure
 
 **Skills:** Python, pandas, scikit-learn, logistic regression, decision trees, GridSearchCV, feature engineering, model evaluation.
 
-**Read more:** [Read Full Slides (PDF)](assets/pdfs/Can%20We%20Predict%20if%20a%20Shipment%20Will%20be%20On%20Time%20-%20Project%20Presentation%20604.pdf)
+**Read more:** [Read Full Slides (PDF)](/assets/pdfs/Can%20We%20Predict%20if%20a%20Shipment%20Will%20be%20On%20Time%20-%20Project%20Presentation%20604.pdf)
+
