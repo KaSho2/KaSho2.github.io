@@ -9,9 +9,8 @@ skills:
   - Visualization and storytelling
   - KPI definition
   - Analytical reporting
+summary: Analyzed Formula 1 pit stop performance data to quantify time loss, consistency, and competitive advantage across teams.
 ---
-
-# F1 Pit Stop Analysis
 
 **Summary**  
 Analyzed F1 pit stop performance trends and communicated results through dashboards and narrative insights.
@@ -23,4 +22,5 @@ Analyzed F1 pit stop performance trends and communicated results through dashboa
 
 **Skills:** RStudio, Tableau, data wrangling, visualization design, KPI analysis, storytelling.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/F1%20Pit%20Stop%20Analysis%20-%20Project%20Report%20-%20412.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/F1%20Pit%20Stop%20Analysis%20-%20Project%20Report%20-%20412.pdf)
+
