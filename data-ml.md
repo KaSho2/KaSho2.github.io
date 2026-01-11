@@ -1,3 +1,8 @@
+---
+layout: default
+title: Data Analytics & ML
+---
+
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Data Analytics & ML
@@ -22,3 +27,4 @@
   {% endif %}
 </div>
 {% endfor %}
+
