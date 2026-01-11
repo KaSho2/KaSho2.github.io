@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 <link rel="stylesheet" href="/assets/css/style.css">
 
 # Praharshith K Jamalapuram
@@ -29,3 +34,4 @@ Engineer focused on manufacturing decision support, process capability, and data
   </div>
   <a class="btn" href="/projects/launch-readiness-copilot/">Open Case Study</a>
 </div>
+
