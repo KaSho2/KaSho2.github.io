@@ -9,6 +9,7 @@ skills:
   - Mechanical design & prototyping
   - Human-centered engineering
   - System integration
+summary: Designed and analyzed a robotic pick-and-place system focused on accessibility, ergonomics, and low-cost mechanical actuation.
 ---
 
 # Pick & Place Robotic Arm for the Elderly & Disabled
@@ -23,4 +24,5 @@ Built a pick-and-place robotic arm concept focused on assisting elderly and disa
 
 **Skills:** SolidWorks, Arduino, motion control fundamentals, prototyping, system integration, human-centered design.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/PICK%20%20AND%20PLACE%20ROBOTIC%20ARM%20FOR%20THE%20ELDERLY%20AND%20DISABLED%20-%20Report.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/PICK%20%20AND%20PLACE%20ROBOTIC%20ARM%20FOR%20THE%20ELDERLY%20AND%20DISABLED%20-%20Report.pdf)
+
