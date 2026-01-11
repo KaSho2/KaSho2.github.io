@@ -7,7 +7,7 @@ permalink: pretty
 collections:
   projects:
     output: true
-    permalink: /projects/:name/
+    permalink: /_projects/:name/
 
 defaults:
   - scope:
@@ -16,4 +16,5 @@ defaults:
     values:
 
       layout: page
+
 
