@@ -12,9 +12,8 @@ skills:
   - GridSearchCV
   - Unsupervised learning (K-Means)
   - Model evaluation
+summary: Built and compared machine learning classification models to predict benign vs malignant breast cancer outcomes using diagnostic features.
 ---
-
-# Predictive Breast Cancer Classification in the U.S.
 
 **Summary**  
 Developed multiple machine learning approaches to classify breast cancer outcomes and compared performance across models and preprocessing strategies.
@@ -27,4 +26,5 @@ Developed multiple machine learning approaches to classify breast cancer outcome
 
 **Skills:** Python, scikit-learn, logistic regression, KNN, random forest, scaling, GridSearchCV, k-means, evaluation.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/Predictive%20Breast%20Cancer%20Classification%20in%20the%20U.S.%20-%20Project%20Report%20-%20521.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/Predictive%20Breast%20Cancer%20Classification%20in%20the%20U.S.%20-%20Project%20Report%20-%20521.pdf)
+
