@@ -10,9 +10,8 @@ skills:
   - MOST analysis (time study)
   - Cost-benefit analysis
   - Implementation planning
+summary: Performed workstation-level process analysis to identify bottlenecks and implement lean improvements for productivity and operator efficiency.
 ---
-
-# Doosan Bobcat ZT2 Workstation 13 Process Improvement
 
 **Summary**  
 Improved efficiency and ergonomics for a tire installation workstation by reducing non-value-added waste and recommending practical layout + process changes.
@@ -25,4 +24,5 @@ Improved efficiency and ergonomics for a tire installation workstation by reduci
 
 **Skills:** Lean (5S), PDCA, SIPOC, spaghetti diagram, ergonomics, MOST, cost-benefit analysis, continuous improvement.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/Doosan%20Bobcat%20ZT2%20Workstation%2013%20Process%20Improvement%20-%20Project%20Report%20-%20515.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/Doosan%20Bobcat%20ZT2%20Workstation%2013%20Process%20Improvement%20-%20Project%20Report%20-%20515.pdf)
+
