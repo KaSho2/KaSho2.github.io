@@ -9,6 +9,7 @@ title: Resume
 
 ## Praharshith K Jamalapuram  
 Industrial & Systems Engineering • Mechanical Engineering • Mechanical Design • Manufacturing • Data Analytics • ML
+Madison, WI
 
 ---
 
@@ -59,3 +60,4 @@ Tamil Nadu, IND
 - Data Analytics & Machine Learning  
 
 <a class="btn" href="/projects/">View All Projects</a>
+
