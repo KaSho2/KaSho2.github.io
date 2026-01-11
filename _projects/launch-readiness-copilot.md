@@ -11,10 +11,10 @@ skills:
   - Technical communication for leadership
 summary: Designed an AI-assisted decision support system to evaluate process capability, stability, and launch readiness using SPC metrics and structured reporting.
 pdf:
-  - /assets/pdfs/Process Capability & Launch Readiness Copilot - Executive Slide Deck.pdf
-  - /assets/pdfs/Process Capability & Launch Readiness Copilot - Tech Insights & Recommendations .pdf
-  - /assets/pdfs/Summary Memo - 9082624322 (1).pdf
-  - /assets/pdfs/Architecture Diagram  9082624322.pdf
+  - assets/pdfs/Process Capability & Launch Readiness Copilot - Executive Slide Deck.pdf
+  - assets/pdfs/Process Capability & Launch Readiness Copilot - Tech Insights & Recommendations .pdf
+  - assets/pdfs/Summary Memo - 9082624322 (1).pdf
+  - assets/pdfs/Architecture Diagram  9082624322.pdf
 ---
 
 # Process Capability & Launch Readiness Copilot (EPD 522 Academic Capstone)
@@ -35,4 +35,5 @@ Designed a pilot concept for a decision-support workflow that helps engineers ev
 - [Executive Slide Deck (PDF)](assets/pdfs/Process%20Capability%20%26%20Launch%20Readiness%20Copilot%20-%20Executive%20Slide%20Deck.pdf)
 - [Tech Insights & Recommendations (PDF)](assets/pdfs/Process%20Capability%20%26%20Launch%20Readiness%20Copilot%20-%20Tech%20Insights%20%26%20Recommendations%20.pdf)
 - [Summary Memo (PDF)](assets/pdfs/Summary%20Memo%20-%209082624322%20(1).pdf)
+
 
