@@ -5,7 +5,7 @@ title: Projects
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# All Projects
+#All Projects
 
 {% for p in site.projects %}
 <div class="project-card">
@@ -27,3 +27,4 @@ title: Projects
 </div>
 
 {% endfor %}
+
