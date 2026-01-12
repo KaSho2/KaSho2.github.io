@@ -6,7 +6,7 @@ permalink: /industrial-systems/
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# Industrial & Systems Engineering
+
 
 {% assign filtered = site.projects | where: "category", "Industrial & Systems" %}
 {% for p in filtered %}
@@ -28,6 +28,7 @@ permalink: /industrial-systems/
   {% endif %}
 </div>
 {% endfor %}
+
 
 
 
