@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Manufacturing & Mechanical Engineering
+permalink: /manufacturing/
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -27,4 +28,5 @@ title: Manufacturing & Mechanical Engineering
   {% endif %}
 </div>
 {% endfor %}
+
 
