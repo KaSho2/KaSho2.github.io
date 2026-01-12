@@ -11,9 +11,9 @@ I’m always open to discussing engineering roles, manufacturing systems, analyt
 
 ## Get in Touch
 
-<a class="btn" href="mailto:kashyap2002@outlook.com">Email (Outlook)</a>
-<a class="btn" href="mailto:praharshith2002@gmail.com">Email (Gmail)</a>
-<a class="btn" href="https://www.linkedin.com/in/kasho210/" target="_blank">LinkedIn</a>
+<a class="btn" href="mailto:kashyap2002@outlook.com">Email - Outlook (preferred)</a>
+<a class="btn" href="mailto:praharshith2002@gmail.com">Email - GMail (alternative)</a>
+<a class="btn" href="https://www.linkedin.com/in/kash0210/" target="_blank">LinkedIn</a>
 <a class="btn" href="https://github.com/KaSho2" target="_blank">GitHub</a>
 
 ---
@@ -31,4 +31,5 @@ If you’re reviewing this portfolio as part of a hiring process, feel free to r
 
 <a class="btn" href="/projects/">Browse Projects</a>
 <a class="btn" href="/resume/">View Resume</a>
+
 
