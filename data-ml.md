@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Data Analytics & ML
+permalink: /data-ml/
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -27,4 +28,5 @@ title: Data Analytics & ML
   {% endif %}
 </div>
 {% endfor %}
+
 
