@@ -8,7 +8,7 @@ title: Home
 # Praharshith K Jamalapuram
 Industrial & Systems Engineering • Mechanical Engineering • Manufacturing • Data Analytics • ML
 
-Engineer focused on manufacturing decision support, process capability, and data-driven systems — combining statistical rigor with responsible AI design.
+Engineer focused on manufacturing decision support, process capability, and data-driven systems; combining statistical rigor with responsible AI design.
 
 <a class="btn" href="/projects/">View All Projects</a>
 <a class="btn" href="/resume/">Resume</a>
@@ -34,5 +34,6 @@ Engineer focused on manufacturing decision support, process capability, and data
   </div>
   <a class="btn" href="/projects/launch-readiness-copilot/">Open Case Study</a>
 </div>
+
 
 
