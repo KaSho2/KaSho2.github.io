@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Industrial & Systems Engineering
-permalink: /Industrial-systems/
+permalink: /industrial-systems/
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -28,5 +28,6 @@ permalink: /Industrial-systems/
   {% endif %}
 </div>
 {% endfor %}
+
 
 
