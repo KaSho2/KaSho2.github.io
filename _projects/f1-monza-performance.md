@@ -8,9 +8,8 @@ skills:
   - Comparative analysis (season vs track performance)
   - Visualization storytelling
   - Reporting and conclusions
+summary: Explored the relationship between Monza circuit performance and season-long championship outcomes using exploratory and comparative analysis.
 ---
-
-# Monza Circuit Performance vs Overall Championship Outcomes
 
 **Summary**  
 Studied whether performance at the Monza Circuit reflects season-long championship outcomes by restructuring multi-season F1 data and designing comparisons at the season level.
@@ -22,4 +21,5 @@ Studied whether performance at the Monza Circuit reflects season-long championsh
 
 **Skills:** data wrangling, abstraction/aggregation, comparative analysis, visualization storytelling, reporting.
 
-**Read more:** [Read Full Report (PDF)](assets/pdfs/649%20Project%20Report%20-%20Group%201.pdf)
+**Read more:** [Read Full Report (PDF)](/assets/pdfs/649%20Project%20Report%20-%20Group%201.pdf)
+
