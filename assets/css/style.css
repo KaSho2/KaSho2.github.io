@@ -167,11 +167,12 @@ hr{
   position: relative;
 }
 
+/* Make the hover "hitbox" include the menu area */
 .dropdown-menu{
   position: absolute;
-  top: 42px;
   left: 0;
-  min-width: 260px;
+  top: calc(100% + 6px);     /* NO GAP issues + keeps it close */
+  min-width: 280px;
   padding: 10px;
   border-radius: 14px;
   border: 1px solid var(--border);
@@ -180,7 +181,18 @@ hr{
   display: none;
 }
 
-.dropdown:hover .dropdown-menu{
+/* Invisible bridge between tab and menu to prevent hover drop */
+.dropdown::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 10px;              /* hover buffer */
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu{
   display: block;
 }
 
@@ -194,16 +206,4 @@ hr{
 
 .dropdown-link:hover{
   background: var(--btnbg);
-}
-
-/* Prevent dropdown from being cut off on small screens */
-@media (max-width: 640px){
-  .topnav{
-    flex-wrap: wrap;
-  }
-  .dropdown-menu{
-    position: static;
-    display: block;
-    margin-top: 6px;
-  }
 }
