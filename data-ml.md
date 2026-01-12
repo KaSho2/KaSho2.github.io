@@ -6,7 +6,7 @@ permalink: /data-ml/
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# Data Analytics & ML
+
 
 {% assign filtered = site.projects | where: "category", "Data Analytics & ML" %}
 {% for p in filtered %}
@@ -28,5 +28,6 @@ permalink: /data-ml/
   {% endif %}
 </div>
 {% endfor %}
+
 
 
