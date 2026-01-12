@@ -9,7 +9,10 @@ permalink: /
 # Praharshith K Jamalapuram
 Industrial & Systems Engineering • Mechanical Engineering • Manufacturing • Data Analytics • ML
 
-Engineer focused on manufacturing decision support, process capability, and data-driven systems; combining statistical rigor with responsible AI design.
+## About Me
+I’m a recent graduate in Industrial & Systems Engineering from the University of Wisconsin–Madison, with a certificate in AI for Engineering Data Analytics, and an undergraduate background in Mechanical Engineering from SASTRA University in India.
+
+Engineering, to me, is rooted in curiosity; about how machines work, how systems behave, and how decisions scale beyond the individual. What began as an interest in mechanics eventually pushed me beyond my comfort zone and across countries, reinforcing my belief that engineering is about continuous learning and building solutions that meaningfully shape the world.
 
 <a class="btn" href="/projects/">View All Projects</a>
 <a class="btn" href="/resume/">Resume</a>
@@ -35,6 +38,7 @@ Engineer focused on manufacturing decision support, process capability, and data
   </div>
   <a class="btn" href="/projects/launch-readiness-copilot/">Open Case Study</a>
 </div>
+
 
 
 
