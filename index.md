@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Engineering Portfolio
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -34,6 +34,7 @@ Engineer focused on manufacturing decision support, process capability, and data
   </div>
   <a class="btn" href="/projects/launch-readiness-copilot/">Open Case Study</a>
 </div>
+
 
 
 
