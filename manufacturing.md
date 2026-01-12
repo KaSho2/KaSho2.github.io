@@ -6,7 +6,7 @@ permalink: /manufacturing/
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# Manufacturing & Mechanical Engineering
+
 
 {% assign filtered = site.projects | where: "category", "Manufacturing & Mechanical" %}
 {% for p in filtered %}
@@ -28,5 +28,6 @@ permalink: /manufacturing/
   {% endif %}
 </div>
 {% endfor %}
+
 
 
