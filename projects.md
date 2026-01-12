@@ -5,8 +5,6 @@ title: Projects
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
-# Projects
-
 {% assign items = site.projects | sort: "title" %}
 
 {% for p in items %}
@@ -39,3 +37,4 @@ title: Projects
   </div>
 </div>
 {% endfor %}
+
