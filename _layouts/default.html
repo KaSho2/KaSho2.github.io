@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+    </title>
+
+    <!-- Cayman theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+
+  <body>
+    <!-- Top Navigation -->
+    <header class="topnav-wrap">
+      <nav class="topnav">
+        <a class="nav-brand" href="{{ '/' | relative_url }}">Home</a>
+
+        <div class="nav-item dropdown">
+          <a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-link" href="{{ '/manufacturing/' | relative_url }}">Manufacturing &amp; Mechanical</a>
+            <a class="dropdown-link" href="{{ '/industrial-systems/' | relative_url }}">Industrial &amp; Systems</a>
+            <a class="dropdown-link" href="{{ '/data-ml/' | relative_url }}">Data Analytics &amp; ML</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="{{ '/resume/' | relative_url }}">Resume</a>
+        <a class="nav-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Page Header (Cayman) -->
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+      {% if site.description and site.description != "" %}
+        <h2 class="project-tagline">{{ site.description }}</h2>
+      {% endif %}
+    </header>
+
+    <main class="main-content" id="content" role="main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <span class="site-footer-owner">
+        © {{ site.time | date: "%Y" }} Praharshith K Jamalapuram
+      </span>
+    </footer>
+  </body>
+</html>
