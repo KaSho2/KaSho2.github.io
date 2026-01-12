@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Projects
+permalink: /projects/
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -37,4 +38,5 @@ title: Projects
   </div>
 </div>
 {% endfor %}
+
 
