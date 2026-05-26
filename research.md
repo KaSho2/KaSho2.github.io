@@ -1,23 +1,33 @@
 ---
 layout: default
-title: Research
+title: Lab Experience
 permalink: /research/
 ---
 
 <div class="pkj-research-page">
 
   <p class="pkj-projects-intro">
-    During my undergraduate years at SASTRA University, I worked as a student researcher in
-    Dr. M. Venkatesan's Thermodynamics &amp; Heat Transfer Laboratory. Both projects below
-    led to peer-reviewed publications. The work was around fluid dynamics and thermal systems
-    at the micro/mini-channel scale, which is where my interest in engineering research and
-    simulation-driven analysis took root.
+    Before the MS, before the systems engineering coursework, there was a lab.
+    Two years at SASTRA working as a student lab assistant under Dr. M. Venkatesan
+    in the Thermodynamics &amp; Heat Transfer Laboratory. I was not a researcher.
+    I was learning what research actually looks like from the inside.
   </p>
 
   <div class="pkj-section-head">
     <span class="pkj-section-num">01 /</span>
-    <span class="pkj-section-title">Published research</span>
+    <span class="pkj-section-title">What the lab was working on</span>
     <span class="pkj-section-line"></span>
+  </div>
+
+  <div class="pkj-callout" style="margin-bottom:2rem">
+    <div class="pkj-callout-label">Honest framing</div>
+    <p class="pkj-callout-text" style="font-style:normal">
+      The papers below were authored and led by Dr. Venkatesan's PhD students and research team.
+      My role was as a lab assistant: experimental setup, COMSOL simulation runs, data collection,
+      and generally trying to keep up with what was happening. I am not a co-author on either paper.
+      I'm listing them here because they're the research context I learned in, and they shaped
+      how I think about simulation, measurement, and the gap between the two.
+    </p>
   </div>
 
   <!-- Paper 1: H2O2 -->
@@ -26,59 +36,60 @@ permalink: /research/
     <div class="pkj-pub-title">Hydrogen Peroxide Decomposition in Serpentine Mini Channel with Silver Catalyst</div>
     <div class="pkj-pub-authors">R. Sushmitha, M. Venkatesan &mdash; School of Mechanical Engineering, SASTRA Deemed University</div>
     <p class="pkj-pub-desc">
-      Monopropellant thrusters using hydrogen peroxide are used in satellite micro-propulsion for precise attitude and orbital control.
-      Complete catalytic decomposition of H<sub>2</sub>O<sub>2</sub> remains a hard problem. This study used COMSOL Multiphysics to
-      compare serpentine vs straight mini-channels (0.25 cm diameter, 56.5 cm length) with silver catalyst placed at varied positions
-      and lengths. The serpentine channel consistently outperformed the straight channel across all catalyst lengths due to improved
-      mixing at the bend sections. A 45 cm serpentine configuration achieved 99.5% decomposition of 30% H<sub>2</sub>O<sub>2</sub>.
-      My involvement was in the simulation work and experimental setup validation during my time in the lab.
+      Monopropellant thrusters using hydrogen peroxide are used in satellite micro-propulsion for
+      precise attitude and orbital control. This study used COMSOL Multiphysics to compare serpentine
+      vs straight mini-channels with silver catalyst at varied positions and lengths. The serpentine
+      channel consistently outperformed the straight channel due to improved mixing at the bend sections.
+      A 45 cm serpentine configuration achieved 99.5% decomposition of 30% H<sub>2</sub>O<sub>2</sub>.
+      My lab work during this period involved COMSOL simulation runs and experimental setup assistance
+      &mdash; hands-on exposure to computational fluid dynamics before I knew what to call it.
     </p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="pkj-pub-role">Student Researcher</span>
+      <span class="pkj-pub-role">Lab Assistant</span>
       <span class="pkj-pub-role">COMSOL Multiphysics</span>
       <span class="pkj-pub-role">Fluid Dynamics</span>
-      <span class="pkj-pub-role">Catalytic Decomposition</span>
     </div>
     <div class="pkj-gallery-grid" style="grid-template-columns:repeat(2,1fr);max-width:400px">
       <div class="pkj-gallery-item"><img class="pkj-gallery-img" src="/images/BTech Research/hydrogenperoxide/Serpentine Mini Channel.png" alt="Serpentine Mini Channel"></div>
-      <div class="pkj-gallery-item"><img class="pkj-gallery-img" src="/images/BTech Research/hydrogenperoxide/straight channel.png" alt="Straight Channel"></div>
+      <div class="pkj-gallery-item"><img class="pkj-gallery-img" src="/images/BTech Research/hydrogenperoxide/straight channel.png" alt="Straight Channel Comparison"></div>
     </div>
   </div>
 
   <!-- Paper 2: IR Two-Phase Flow -->
   <div class="pkj-pub-card">
-    <div class="pkj-pub-journal">Recent Advances in Fluid Dynamics (Springer Nature, 2023) &nbsp;&middot;&nbsp; Lecture Notes in Mechanical Engineering</div>
+    <div class="pkj-pub-journal">Recent Advances in Fluid Dynamics &nbsp;&middot;&nbsp; Springer Nature, 2023</div>
     <div class="pkj-pub-title">Shape and Size Effects of Glass Mini-Channels on Infrared Sensors in Air&ndash;Water Two-Phase Flow</div>
     <div class="pkj-pub-authors">N. Mithran, K. Sowndarya, M. Venkatesan &mdash; SASTRA Deemed University</div>
     <p class="pkj-pub-desc">
-      Two-phase flow regimes (bubble, slug) inside mini-channels need accurate measurement for applications in nuclear
-      reactor water transport and microfluidic systems. This study examined how the cross-sectional shape (circular vs square vs
-      triangular) and diameter of borosilicate glass test sections affect IR sensor signal output. Experiments were conducted using
-      high-speed photography (340 fps) alongside COMSOL optical simulations. Key finding: circular tube diameter and wall thickness
-      directly govern IR ray convergence and the measurable void fraction amplitude. The square channel behaved differently due to
-      flat surface refraction, complicating direct comparison with circular sections. My role was in the COMSOL simulation setup
-      and experimental data collection in the lab.
+      Two-phase flow measurement in mini-channels matters for nuclear reactor water transport and
+      microfluidic applications. This study examined how cross-sectional shape and diameter of borosilicate
+      glass channels affect IR sensor signal output, using high-speed photography alongside COMSOL optical
+      simulations. The lab work I assisted with during this project introduced me to the challenge of
+      interpreting noisy sensor data and the friction between simulation results and real experimental
+      conditions. That gap between model and measurement is something I kept running into in later work.
     </p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="pkj-pub-role">Student Researcher</span>
+      <span class="pkj-pub-role">Lab Assistant</span>
       <span class="pkj-pub-role">COMSOL Multiphysics</span>
-      <span class="pkj-pub-role">IR Sensing</span>
       <span class="pkj-pub-role">Two-Phase Flow</span>
-      <span class="pkj-pub-role">High-Speed Imaging</span>
     </div>
     <div class="pkj-gallery-grid" style="grid-template-columns:repeat(1,1fr);max-width:200px">
       <div class="pkj-gallery-item"><img class="pkj-gallery-img" src="/images/BTech Research/IRTwophaseflow/524979_1_En_27_Fig1_HTML.webp" alt="IR Two-Phase Flow Setup"></div>
     </div>
   </div>
 
-  <div class="pkj-callout" style="margin-top:2rem">
-    <div class="pkj-callout-label">A note on my role</div>
-    <p class="pkj-callout-text" style="font-style:normal">
-      Both publications came out of Dr. Venkatesan's lab, where I worked as a student researcher and assistant to PhD candidates.
-      My contributions were in COMSOL simulation setup, experimental data collection, and analysis. The listed authors are the primary
-      researchers who led the work.
-    </p>
+  <div class="pkj-section-head" style="margin-top:2rem">
+    <span class="pkj-section-num">02 /</span>
+    <span class="pkj-section-title">What I took from it</span>
+    <span class="pkj-section-line"></span>
   </div>
+
+  <p class="pkj-body-text">
+    Two years in that lab before my undergraduate thesis gave me something no coursework had: a sense of
+    how long research actually takes and how many iterations sit between a hypothesis and a result.
+    The COMSOL work taught me simulation-driven thinking. The experimental side taught me to be
+    skeptical of clean outputs. Both of those instincts have shown up in every project since.
+  </p>
 
 </div>
 
