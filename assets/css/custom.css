@@ -1,12 +1,16 @@
 /* ============================================================
-   PKJ Portfolio — Custom Theme
-   Light: Navy #1B2A6B · Gold #C8973A · Red #CC1E1E
-   Dark:  Black #0F0F0F · White #F0F0F0 · Red #E63333
+   PKJ Portfolio — Custom Theme  v2
+   Light:  Navy #1B2A6B · Gold #C8973A · Red #CC1E1E · White bg
+   Dark:   Black #0F0F0F · White text · Red #E63333 accents
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
-/* ── Variables ───────────────────────────────────────────── */
+
+/* ── 1. CSS Variables ─────────────────────────────────────── */
+
+/* Light mode (default) */
+[data-theme="light"],
 :root {
   --pkj-navy:        #1B2A6B;
   --pkj-gold:        #C8973A;
@@ -18,15 +22,46 @@
   --pkj-muted:       #5a5a72;
   --pkj-subtle:      #9a9aaa;
   --pkj-border:      rgba(27, 42, 107, 0.12);
+  --pkj-header-bg:   #1B2A6B;
+  --pkj-header-text: #FFFFFF;
+  --pkj-header-sub:  rgba(255,255,255,0.72);
+  --pkj-nav-bg:      #FFFFFF;
+  --pkj-nav-border:  rgba(27,42,107,0.08);
+  --pkj-drop-bg:     #FFFFFF;
+  --pkj-drop-border: rgba(27,42,107,0.10);
+  --pkj-footer-bg:   #F4F6FB;
   --pkj-radius:      10px;
   --pkj-radius-lg:   16px;
+  --pkj-transition:  0.2s ease;
   --pkj-font-body:   'DM Sans', system-ui, sans-serif;
   --pkj-font-display:'Playfair Display', Georgia, serif;
-  --pkj-transition:  0.2s ease;
 }
 
+/* Dark mode — explicit toggle */
+[data-theme="dark"] {
+  --pkj-navy:        #F0F0F0;
+  --pkj-gold:        #C8973A;
+  --pkj-red:         #E63333;
+  --pkj-bg:          #0F0F0F;
+  --pkj-surface:     #1A1A1A;
+  --pkj-surface-alt: #1E1E1E;
+  --pkj-text:        #F0F0F0;
+  --pkj-muted:       #9a9a9a;
+  --pkj-subtle:      #666666;
+  --pkj-border:      rgba(255,255,255,0.07);
+  --pkj-header-bg:   #111111;
+  --pkj-header-text: #F0F0F0;
+  --pkj-header-sub:  rgba(240,240,240,0.55);
+  --pkj-nav-bg:      #0F0F0F;
+  --pkj-nav-border:  rgba(255,255,255,0.06);
+  --pkj-drop-bg:     #1A1A1A;
+  --pkj-drop-border: rgba(255,255,255,0.08);
+  --pkj-footer-bg:   #0F0F0F;
+}
+
+/* System preference fallback (when no data-theme set yet) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --pkj-navy:        #F0F0F0;
     --pkj-gold:        #C8973A;
     --pkj-red:         #E63333;
@@ -36,21 +71,479 @@
     --pkj-text:        #F0F0F0;
     --pkj-muted:       #9a9a9a;
     --pkj-subtle:      #666666;
-    --pkj-border:      rgba(255, 255, 255, 0.07);
+    --pkj-border:      rgba(255,255,255,0.07);
+    --pkj-header-bg:   #111111;
+    --pkj-header-text: #F0F0F0;
+    --pkj-header-sub:  rgba(240,240,240,0.55);
+    --pkj-nav-bg:      #0F0F0F;
+    --pkj-nav-border:  rgba(255,255,255,0.06);
+    --pkj-drop-bg:     #1A1A1A;
+    --pkj-drop-border: rgba(255,255,255,0.08);
+    --pkj-footer-bg:   #0F0F0F;
   }
 }
 
-/* ── Base ────────────────────────────────────────────────── */
+
+/* ── 2. Cayman theme overrides ───────────────────────────── */
+
+/* Body & page background */
+html, body {
+  background-color: var(--pkj-bg) !important;
+  color: var(--pkj-text) !important;
+  font-family: var(--pkj-font-body) !important;
+}
+
+/* Main content area */
+.main-content {
+  background-color: var(--pkj-bg) !important;
+  color: var(--pkj-text) !important;
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Default headings in main content (for pages not using pkj- classes) */
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: var(--pkj-navy) !important;
+  font-family: var(--pkj-font-body) !important;
+}
+
+.main-content h1 { font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; }
+.main-content h2 { font-size: 1.3rem; font-weight: 500; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--pkj-border); padding-bottom: 0.4rem; }
+.main-content h3 { font-size: 1.1rem; font-weight: 500; margin: 1.5rem 0 0.5rem; }
+
+.main-content p,
+.main-content li,
+.main-content td {
+  color: var(--pkj-muted) !important;
+  line-height: 1.75;
+  font-size: 14px;
+}
+
+.main-content a {
+  color: var(--pkj-red) !important;
+}
+
+.main-content a:hover {
+  color: var(--pkj-gold) !important;
+}
+
+.main-content hr {
+  border: none;
+  border-top: 0.5px solid var(--pkj-border);
+  margin: 2rem 0;
+}
+
+.main-content strong {
+  color: var(--pkj-navy) !important;
+  font-weight: 500;
+}
+
+/* Cayman footer */
+.site-footer {
+  background-color: var(--pkj-footer-bg) !important;
+  border-top: 0.5px solid var(--pkj-border) !important;
+  color: var(--pkj-subtle) !important;
+}
+
+/* Cayman tag/pill elements */
+.main-content code {
+  background: var(--pkj-surface) !important;
+  color: var(--pkj-navy) !important;
+  border: 0.5px solid var(--pkj-border) !important;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 12px;
+}
+
+
+/* ── 3. Navigation ───────────────────────────────────────── */
+
+.topnav-wrap {
+  background-color: var(--pkj-nav-bg) !important;
+  border-bottom: 0.5px solid var(--pkj-nav-border) !important;
+  box-shadow: none !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
+.topnav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  padding: 0 2rem !important;
+  height: 52px !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+}
+
+/* PKJ Logo */
+.pkj-logo {
+  font-family: var(--pkj-font-display) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--pkj-navy) !important;
+  text-decoration: none !important;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  position: relative;
+  padding-bottom: 3px;
+  flex-shrink: 0;
+}
+
+.pkj-logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--pkj-gold);
+  border-radius: 1px;
+}
+
+/* Nav center group */
+.pkj-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Nav links — override Cayman */
+.topnav .nav-link,
+.pkj-nav-center .nav-link {
+  font-family: var(--pkj-font-body) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--pkj-muted) !important;
+  text-decoration: none !important;
+  padding: 6px 12px !important;
+  border-radius: var(--pkj-radius) !important;
+  transition: color var(--pkj-transition), background var(--pkj-transition) !important;
+  background: transparent !important;
+}
+
+.topnav .nav-link:hover,
+.pkj-nav-center .nav-link:hover {
+  color: var(--pkj-navy) !important;
+  background: var(--pkj-surface) !important;
+}
+
+/* Nav right group */
+.pkj-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* Contact pill */
+.pkj-contact-pill {
+  font-family: var(--pkj-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pkj-red) !important;
+  text-decoration: none !important;
+  border: 1.5px solid var(--pkj-red);
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: background var(--pkj-transition), color var(--pkj-transition);
+  white-space: nowrap;
+}
+
+.pkj-contact-pill:hover {
+  background: var(--pkj-red) !important;
+  color: #ffffff !important;
+}
+
+/* ── Dropdown menu ──────────────────────────────────────── */
+
+.nav-item.dropdown {
+  position: relative !important;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.dropdown-menu {
+  display: none !important;
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: var(--pkj-drop-bg) !important;
+  border: 0.5px solid var(--pkj-drop-border) !important;
+  border-radius: var(--pkj-radius-lg) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10) !important;
+  min-width: 200px !important;
+  padding: 6px !important;
+  z-index: 200 !important;
+  overflow: hidden;
+}
+
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  display: block !important;
+  animation: pkj-drop-in 0.15s ease both;
+}
+
+@keyframes pkj-drop-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dropdown-link {
+  display: block !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  color: var(--pkj-muted) !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  transition: background var(--pkj-transition), color var(--pkj-transition) !important;
+  font-family: var(--pkj-font-body) !important;
+}
+
+.dropdown-link:hover {
+  background: var(--pkj-surface) !important;
+  color: var(--pkj-navy) !important;
+}
+
+.dropdown-link--all {
+  color: var(--pkj-red) !important;
+  font-weight: 500 !important;
+  margin-top: 2px;
+}
+
+.dropdown-link--all:hover {
+  background: var(--pkj-surface-alt) !important;
+  color: var(--pkj-red) !important;
+}
+
+.dropdown-divider {
+  border: none;
+  border-top: 0.5px solid var(--pkj-border);
+  margin: 4px 8px;
+}
+
+
+/* ── 4. Theme toggle ─────────────────────────────────────── */
+
+.pkj-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pkj-toggle-track {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--pkj-surface);
+  border: 1px solid var(--pkj-border);
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.pkj-toggle-thumb {
+  position: absolute;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--pkj-gold);
+  transition: transform 0.3s ease, background 0.3s;
+  z-index: 1;
+}
+
+[data-theme="dark"] .pkj-toggle-thumb {
+  transform: translateX(22px);
+  background: var(--pkj-red);
+}
+
+.pkj-toggle-sun,
+.pkj-toggle-moon {
+  position: absolute;
+  font-size: 11px;
+  line-height: 1;
+  z-index: 0;
+  transition: opacity 0.2s;
+}
+
+.pkj-toggle-sun {
+  left: 6px;
+  color: var(--pkj-gold);
+}
+
+.pkj-toggle-moon {
+  right: 6px;
+  color: var(--pkj-subtle);
+}
+
+/* In dark mode the thumb covers the moon, so sun becomes visible more */
+[data-theme="dark"] .pkj-toggle-sun { opacity: 0.4; }
+[data-theme="light"] .pkj-toggle-moon { opacity: 0.4; }
+
+
+/* ── 5. Inner page header (non-homepage) ─────────────────── */
+
+.pkj-inner-header {
+  background-color: var(--pkj-header-bg) !important;
+  background-image: none !important;
+  border-bottom: 3px solid var(--pkj-gold) !important;
+  padding: 2rem 0 !important;
+  min-height: auto !important;
+}
+
+.pkj-inner-header-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pkj-inner-header .project-name,
+.pkj-inner-header-content .project-name {
+  font-family: var(--pkj-font-display) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--pkj-header-text) !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em;
+}
+
+.pkj-page-tagline {
+  color: var(--pkj-header-sub);
+  font-size: 14px;
+  margin: 6px 0 0;
+  font-weight: 300;
+}
+
+/* Cayman's own project-tagline inside page-header */
+.page-header .project-tagline {
+  display: none !important; /* hide Cayman default tagline on inner pages */
+}
+
+
+/* ── 6. Footer ───────────────────────────────────────────── */
+
+.pkj-footer {
+  background: var(--pkj-footer-bg) !important;
+  border-top: 0.5px solid var(--pkj-border) !important;
+}
+
+.pkj-footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pkj-footer-logo {
+  font-family: var(--pkj-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--pkj-navy);
+  margin-right: auto;
+}
+
+.pkj-footer-copy {
+  font-size: 12px;
+  color: var(--pkj-subtle);
+}
+
+.pkj-footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.pkj-footer-links a {
+  font-size: 12px;
+  color: var(--pkj-subtle) !important;
+  text-decoration: none !important;
+  transition: color var(--pkj-transition);
+}
+
+.pkj-footer-links a:hover {
+  color: var(--pkj-gold) !important;
+}
+
+
+/* ── 7. Decorative page backgrounds ─────────────────────── */
+
+/* Geometric: Home, Contact, Resume */
+.page-home .main-content::before,
+.page-contact .main-content::before,
+.page-resume .main-content::before {
+  content: '';
+  position: fixed;
+  top: 80px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1px solid var(--pkj-gold);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-home .main-content::after,
+.page-contact .main-content::after,
+.page-resume .main-content::after {
+  content: '';
+  position: fixed;
+  bottom: 40px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid var(--pkj-navy);
+  opacity: 0.04;
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blueprint grid: Experience page */
+.page-experience .main-content {
+  background-image:
+    linear-gradient(var(--pkj-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pkj-border) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+  background-position: -0.5px -0.5px !important;
+}
+
+
+/* ── 8. Home page components ─────────────────────────────── */
+
+@keyframes pkj-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .pkj-home {
   font-family: var(--pkj-font-body);
   color: var(--pkj-text);
   padding-bottom: 4rem;
-}
-
-/* ── Entrance animation ──────────────────────────────────── */
-@keyframes pkj-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  position: relative;
+  z-index: 1;
 }
 
 .pkj-home > * {
@@ -64,7 +557,7 @@
 .pkj-home > *:nth-child(6) { animation-delay: 0.30s; }
 .pkj-home > *:nth-child(7) { animation-delay: 0.35s; }
 
-/* ── Hero ────────────────────────────────────────────────── */
+/* Hero layout */
 .pkj-hero {
   display: grid;
   grid-template-columns: 1fr 210px;
@@ -73,11 +566,16 @@
   margin: 2.5rem 0 2rem;
 }
 
+/* Status pill */
+@keyframes pkj-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+
 .pkj-status-pill {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--pkj-font-body);
   font-size: 12px;
   font-weight: 500;
   color: var(--pkj-navy);
@@ -86,17 +584,10 @@
   padding: 4px 12px 4px 9px;
   border-radius: 20px;
   margin-bottom: 1rem;
-  letter-spacing: 0.01em;
-}
-
-@keyframes pkj-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.4); opacity: 0.6; }
 }
 
 .pkj-status-pill::before {
   content: '';
-  display: inline-block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -105,9 +596,10 @@
   animation: pkj-pulse 2.2s ease-in-out infinite;
 }
 
+/* Hero name */
 .pkj-hero-name {
   font-family: var(--pkj-font-display);
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(26px, 3.8vw, 40px);
   font-weight: 700;
   color: var(--pkj-navy);
   line-height: 1.15;
@@ -115,6 +607,7 @@
   letter-spacing: -0.01em;
 }
 
+/* Hero tagline */
 .pkj-hero-tagline {
   font-size: 14px;
   color: var(--pkj-muted);
@@ -124,13 +617,9 @@
   font-weight: 300;
 }
 
-.pkj-hero-ctas {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+/* CTAs */
+.pkj-hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
 
-/* Buttons */
 .pkj-btn-primary,
 .pkj-btn-secondary,
 .pkj-btn-ghost {
@@ -139,53 +628,37 @@
   font-weight: 500;
   padding: 8px 18px;
   border-radius: var(--pkj-radius);
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
-  transition: transform var(--pkj-transition), box-shadow var(--pkj-transition), opacity var(--pkj-transition);
+  transition: transform var(--pkj-transition), opacity var(--pkj-transition), background var(--pkj-transition);
   cursor: pointer;
   border: none;
 }
 
 .pkj-btn-primary {
   background: var(--pkj-red);
-  color: #ffffff;
+  color: #ffffff !important;
 }
-
-.pkj-btn-primary:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
+.pkj-btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
 
 .pkj-btn-secondary {
   background: transparent;
-  color: var(--pkj-navy);
-  border: 1.5px solid var(--pkj-gold);
+  color: var(--pkj-navy) !important;
+  border: 1.5px solid var(--pkj-gold) !important;
 }
-
-.pkj-btn-secondary:hover {
-  background: var(--pkj-surface-alt);
-  transform: translateY(-1px);
-}
+.pkj-btn-secondary:hover { background: var(--pkj-surface-alt); transform: translateY(-1px); }
 
 .pkj-btn-ghost {
   background: transparent;
-  color: var(--pkj-muted);
-  border: 0.5px solid var(--pkj-border);
+  color: var(--pkj-muted) !important;
+  border: 0.5px solid var(--pkj-border) !important;
 }
+.pkj-btn-ghost:hover { color: var(--pkj-navy) !important; background: var(--pkj-surface); }
 
-.pkj-btn-ghost:hover {
-  color: var(--pkj-navy);
-  border-color: var(--pkj-border);
-  background: var(--pkj-surface);
-}
+/* Hero sidebar */
+.pkj-hero-sidebar { display: flex; flex-direction: column; gap: 12px; }
 
-/* ── Sidebar: photo + status card ───────────────────────── */
-.pkj-hero-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* Photo frame */
 .pkj-photo-frame {
   width: 100%;
   aspect-ratio: 1;
@@ -217,6 +690,7 @@
   height: 100%;
 }
 
+/* Status card */
 .pkj-status-card {
   background: var(--pkj-surface);
   border: 0.5px solid var(--pkj-border);
@@ -232,17 +706,9 @@
   margin-bottom: 10px;
   font-size: 12px;
 }
+.pkj-status-row:last-child { margin-bottom: 0; }
 
-.pkj-status-row:last-child {
-  margin-bottom: 0;
-}
-
-.pkj-status-icon {
-  color: var(--pkj-gold);
-  font-size: 14px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+.pkj-status-icon { color: var(--pkj-gold); font-size: 10px; flex-shrink: 0; margin-top: 3px; }
 
 .pkj-status-label strong {
   display: block;
@@ -254,12 +720,9 @@
   margin-bottom: 1px;
 }
 
-.pkj-status-label span {
-  color: var(--pkj-text);
-  font-size: 12px;
-}
+.pkj-status-label span { color: var(--pkj-text); font-size: 12px; }
 
-/* ── Stats strip ─────────────────────────────────────────── */
+/* Stats strip */
 .pkj-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -276,10 +739,7 @@
   transition: transform var(--pkj-transition), border-color var(--pkj-transition);
 }
 
-.pkj-stat-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--pkj-gold);
-}
+.pkj-stat-card:hover { transform: translateY(-2px); border-color: var(--pkj-gold); }
 
 .pkj-stat-num {
   font-family: var(--pkj-font-display);
@@ -290,14 +750,9 @@
   margin-bottom: 4px;
 }
 
-.pkj-stat-label {
-  font-size: 11px;
-  color: var(--pkj-subtle);
-  font-weight: 400;
-  letter-spacing: 0.03em;
-}
+.pkj-stat-label { font-size: 11px; color: var(--pkj-subtle); letter-spacing: 0.03em; }
 
-/* ── Section headers ─────────────────────────────────────── */
+/* Section headers */
 .pkj-section-head {
   display: flex;
   align-items: center;
@@ -305,28 +760,11 @@
   margin-bottom: 1.25rem;
 }
 
-.pkj-section-num {
-  font-size: 11px;
-  color: var(--pkj-gold);
-  font-weight: 500;
-  flex-shrink: 0;
-  letter-spacing: 0.04em;
-}
+.pkj-section-num { font-size: 11px; color: var(--pkj-gold); font-weight: 500; flex-shrink: 0; letter-spacing: 0.04em; }
+.pkj-section-title { font-size: 15px; font-weight: 500; color: var(--pkj-navy); flex-shrink: 0; }
+.pkj-section-line { flex: 1; height: 0.5px; background: var(--pkj-border); }
 
-.pkj-section-title {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--pkj-navy);
-  flex-shrink: 0;
-}
-
-.pkj-section-line {
-  flex: 1;
-  height: 0.5px;
-  background: var(--pkj-border);
-}
-
-/* ── Body text ───────────────────────────────────────────── */
+/* Body text */
 .pkj-body-text {
   font-size: 14px;
   color: var(--pkj-muted);
@@ -336,7 +774,7 @@
   font-weight: 300;
 }
 
-/* ── Why grad school callout ─────────────────────────────── */
+/* Why grad school callout */
 .pkj-callout {
   border-left: 3px solid var(--pkj-red);
   padding: 16px 20px;
@@ -361,14 +799,15 @@
   font-weight: 300;
   font-style: italic;
   max-width: 660px;
+  margin: 0;
 }
 
-/* ── Project cards ───────────────────────────────────────── */
+/* Featured project cards */
 .pkj-proj-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .pkj-proj-card {
@@ -377,21 +816,19 @@
   overflow: hidden;
   background: var(--pkj-bg);
   transition: transform var(--pkj-transition), border-color var(--pkj-transition), box-shadow var(--pkj-transition);
-  text-decoration: none;
+  text-decoration: none !important;
   display: block;
-  color: inherit;
+  color: inherit !important;
 }
 
 .pkj-proj-card:hover {
   transform: translateY(-3px);
   border-color: var(--pkj-gold);
-  box-shadow: 0 8px 24px rgba(27, 42, 107, 0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
 }
 
-@media (prefers-color-scheme: dark) {
-  .pkj-proj-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
+[data-theme="dark"] .pkj-proj-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
 .pkj-proj-img {
@@ -411,14 +848,9 @@
   transition: transform 0.4s ease;
 }
 
-.pkj-proj-card:hover .pkj-proj-img img {
-  transform: scale(1.04);
-}
+.pkj-proj-card:hover .pkj-proj-img img { transform: scale(1.04); }
 
-.pkj-proj-img-placeholder {
-  font-size: 12px;
-  color: var(--pkj-subtle);
-}
+.pkj-proj-img-placeholder { font-size: 12px; color: var(--pkj-subtle); }
 
 .pkj-proj-badge {
   position: absolute;
@@ -433,16 +865,9 @@
   letter-spacing: 0.03em;
 }
 
-.pkj-proj-body {
-  padding: 16px;
-}
+.pkj-proj-body { padding: 16px; }
 
-.pkj-proj-tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 9px;
-}
+.pkj-proj-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 9px; }
 
 .pkj-proj-tag {
   font-size: 10px;
@@ -471,20 +896,34 @@
 
 .pkj-proj-link {
   font-size: 12px;
-  color: var(--pkj-red);
+  color: var(--pkj-red) !important;
   font-weight: 500;
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-flex;
   align-items: center;
   gap: 4px;
   transition: gap var(--pkj-transition);
 }
 
-.pkj-proj-card:hover .pkj-proj-link {
-  gap: 8px;
-}
+.pkj-proj-card:hover .pkj-proj-link { gap: 8px; }
 
-/* ── Beyond Engineering ──────────────────────────────────── */
+/* View all link */
+.pkj-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pkj-navy) !important;
+  text-decoration: none !important;
+  border-bottom: 1.5px solid var(--pkj-gold);
+  padding-bottom: 1px;
+  transition: color var(--pkj-transition);
+  margin-bottom: 2.5rem;
+}
+.pkj-view-all:hover { color: var(--pkj-gold) !important; }
+
+/* Beyond Engineering section */
 .pkj-beyond {
   background: var(--pkj-surface);
   border: 0.5px solid var(--pkj-border);
@@ -503,11 +942,7 @@
   max-width: 640px;
 }
 
-.pkj-beyond-interests {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+.pkj-beyond-interests { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .pkj-interest {
   display: inline-flex;
@@ -519,72 +954,349 @@
   border: 0.5px solid var(--pkj-border);
   padding: 5px 12px;
   border-radius: 20px;
-  font-weight: 400;
   transition: border-color var(--pkj-transition), color var(--pkj-transition);
+  text-decoration: none !important;
 }
 
-.pkj-interest:hover {
-  border-color: var(--pkj-gold);
-  color: var(--pkj-gold);
+.pkj-interest:hover { border-color: var(--pkj-gold); color: var(--pkj-gold) !important; }
+.pkj-interest-icon { font-size: 14px; color: var(--pkj-gold); }
+
+
+/* ── 9. Experience page styles ───────────────────────────── */
+
+.pkj-experience-page {
+  position: relative;
+  z-index: 1;
 }
 
-.pkj-interest-icon {
-  font-size: 14px;
-  color: var(--pkj-gold);
-}
-
-/* ── View all projects link ──────────────────────────────── */
-.pkj-view-all {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--pkj-navy);
-  text-decoration: none;
-  border-bottom: 1.5px solid var(--pkj-gold);
-  padding-bottom: 1px;
-  transition: color var(--pkj-transition), border-color var(--pkj-transition);
+.pkj-exp-section {
   margin-bottom: 2.5rem;
 }
 
-.pkj-view-all:hover {
+.pkj-exp-section-title {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--pkj-gold);
+  margin-bottom: 1rem;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid var(--pkj-border);
+}
+
+/* Timeline */
+.pkj-timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--pkj-border);
+}
+
+.pkj-timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid var(--pkj-border);
+}
+
+.pkj-timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pkj-timeline-dot {
+  position: absolute;
+  left: -1.75rem;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pkj-gold);
+  border: 2px solid var(--pkj-bg);
+  box-shadow: 0 0 0 2px var(--pkj-gold);
+}
+
+.pkj-exp-role {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  margin-bottom: 2px;
+}
+
+.pkj-exp-org {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  margin-bottom: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pkj-exp-org-name { font-weight: 500; }
+
+.pkj-exp-meta {
+  font-size: 11px;
+  color: var(--pkj-subtle);
+  padding: 1px 8px;
+  background: var(--pkj-surface);
+  border-radius: 20px;
+  border: 0.5px solid var(--pkj-border);
+}
+
+.pkj-exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.pkj-exp-bullets li {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  line-height: 1.65;
+  padding: 3px 0 3px 14px;
+  position: relative;
+  font-weight: 300;
+}
+
+.pkj-exp-bullets li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--pkj-gold);
+  font-weight: 400;
+}
+
+.pkj-exp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.pkj-exp-skill {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--pkj-surface-alt);
+  color: var(--pkj-navy);
+  border: 0.5px solid var(--pkj-border);
+  font-weight: 500;
+}
+
+
+/* ── 10. Resume page styles ──────────────────────────────── */
+
+.pkj-resume-page {
+  position: relative;
+  z-index: 1;
+}
+
+.pkj-resume-header-card {
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--pkj-gold);
+}
+
+.pkj-resume-name {
+  font-family: var(--pkj-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pkj-navy);
+  margin-bottom: 4px;
+}
+
+.pkj-resume-sub {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+.pkj-dl-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.pkj-dl-card {
+  background: var(--pkj-bg);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none !important;
+  transition: transform var(--pkj-transition), border-color var(--pkj-transition), box-shadow var(--pkj-transition);
+  display: block;
+}
+
+.pkj-dl-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--pkj-gold);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.pkj-dl-icon { font-size: 28px; margin-bottom: 8px; }
+
+.pkj-dl-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  margin-bottom: 4px;
+}
+
+.pkj-dl-sub {
+  font-size: 12px;
+  color: var(--pkj-muted);
+  font-weight: 300;
+}
+
+.pkj-dl-badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: var(--pkj-red);
+  color: #fff;
+}
+
+.pkj-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.pkj-skill-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  color: var(--pkj-navy);
+  font-weight: 400;
+  transition: border-color var(--pkj-transition);
+}
+
+.pkj-skill-tag:hover { border-color: var(--pkj-gold); }
+
+
+/* ── 11. Contact page styles ─────────────────────────────── */
+
+.pkj-contact-page {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.pkj-contact-intro {
+  font-size: 15px;
+  color: var(--pkj-muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.pkj-contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.pkj-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  padding: 14px 16px;
+  text-decoration: none !important;
+  transition: transform var(--pkj-transition), border-color var(--pkj-transition);
+}
+
+.pkj-contact-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--pkj-gold);
+}
+
+.pkj-contact-link-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.pkj-contact-link-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  display: block;
+  margin-bottom: 1px;
+}
+
+.pkj-contact-link-sub {
+  font-size: 11px;
+  color: var(--pkj-subtle);
+}
+
+.pkj-interests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--pkj-surface);
+  border-radius: var(--pkj-radius-lg);
+  padding: 16px 20px;
+  border-left: 3px solid var(--pkj-gold);
+}
+
+.pkj-interests-list li {
+  font-size: 14px;
+  color: var(--pkj-muted);
+  padding: 5px 0 5px 14px;
+  position: relative;
+  font-weight: 300;
+}
+
+.pkj-interests-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
   color: var(--pkj-gold);
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
-@media (max-width: 680px) {
-  .pkj-hero {
-    grid-template-columns: 1fr;
-  }
 
-  .pkj-hero-sidebar {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+/* ── 12. Responsive ──────────────────────────────────────── */
 
-  .pkj-photo-frame {
-    width: 90px;
-    height: 90px;
-    aspect-ratio: auto;
-    flex-shrink: 0;
-    border-radius: 50%;
-  }
+@media (max-width: 720px) {
+  .topnav { padding: 0 1rem !important; }
+  .pkj-nav-center { gap: 0; }
+  .topnav .nav-link { padding: 6px 8px !important; font-size: 12px !important; }
+  .pkj-contact-pill { padding: 4px 10px; font-size: 11px; }
 
-  .pkj-status-card {
-    flex: 1;
-  }
+  .pkj-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .pkj-hero-sidebar { flex-direction: row; align-items: flex-start; gap: 10px; }
+  .pkj-photo-frame { width: 80px; height: 80px; aspect-ratio: auto; border-radius: 50%; flex-shrink: 0; }
+  .pkj-status-card { flex: 1; }
 
-  .pkj-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .pkj-stats { grid-template-columns: repeat(2, 1fr); }
+  .pkj-proj-grid { grid-template-columns: 1fr; }
+  .pkj-dl-cards { grid-template-columns: 1fr; }
+  .pkj-contact-links { grid-template-columns: 1fr; }
 
-  .pkj-proj-grid {
-    grid-template-columns: 1fr;
-  }
+  .pkj-hero-ctas { flex-direction: column; align-items: flex-start; }
+  .pkj-footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .pkj-footer-logo { margin-right: 0; }
+}
 
-  .pkj-hero-ctas {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 480px) {
+  .pkj-nav-center .nav-link[href*="experience"],
+  .pkj-nav-center .nav-link[href*="resume"] {
+    display: none;
   }
 }
