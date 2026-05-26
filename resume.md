@@ -18,13 +18,13 @@ permalink: /resume/
   </div>
 
   <div class="pkj-dl-cards">
-    <a class="pkj-dl-card" href="PASTE_INDUSTRY_RESUME_GOOGLE_DOC_LINK_HERE" target="_blank" rel="noopener">
+    <a class="pkj-dl-card" href="https://docs.google.com/document/d/1PLrJXKRY2rhoz9IQ9XSW6MGf7Ir0vcHB/edit?usp=sharing&ouid=101724114960001248396&rtpof=true&sd=true" target="_blank" rel="noopener">
       <div class="pkj-dl-icon">&#128196;</div>
       <div class="pkj-dl-label">Industry Resume</div>
       <div class="pkj-dl-sub">Concise · Manufacturing &amp; ISE focus</div>
       <span class="pkj-dl-badge">Open in Google Docs &rarr;</span>
     </a>
-    <a class="pkj-dl-card" href="PASTE_ACADEMIC_CV_GOOGLE_DOC_LINK_HERE" target="_blank" rel="noopener">
+    <a class="pkj-dl-card" href="https://docs.google.com/document/d/1yJVIfL2PahhE-3AZgBrFY7rn91ffPOsi/edit?usp=sharing&ouid=101724114960001248396&rtpof=true&sd=true" target="_blank" rel="noopener">
       <div class="pkj-dl-icon">&#127979;</div>
       <div class="pkj-dl-label">Academic CV</div>
       <div class="pkj-dl-sub">Full &nbsp;·&nbsp; PhD application version</div>
