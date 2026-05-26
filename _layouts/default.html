@@ -1,48 +1,131 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}" data-theme="light">
   <head>
+
+    <!-- Anti-flash theme script: runs before anything renders -->
+    <script>
+      (function(){
+        var stored = localStorage.getItem('pkj-theme');
+        var sys    = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', stored || sys);
+      })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
-    </title>
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Cayman base — always first -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <!-- Custom theme — always second so it wins -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
   </head>
-  <body>
+
+  <!-- Body class tells CSS which page we're on (for decorative backgrounds) -->
+  <body class="
+    {% if page.permalink == '/' %}page-home
+    {% elsif page.permalink == '/experience/' %}page-experience
+    {% elsif page.permalink == '/resume/' %}page-resume
+    {% elsif page.permalink == '/contact/' %}page-contact
+    {% elsif page.permalink == '/projects/' or page.permalink == '/manufacturing/' or page.permalink == '/industrial-systems/' or page.permalink == '/data-ml/' %}page-projects
+    {% else %}page-inner
+    {% endif %}
+  ">
+
+    <!-- ── Top navigation ────────────────────────────────── -->
     <header class="topnav-wrap">
       <nav class="topnav">
-        <a class="nav-brand" href="{{ '/' | relative_url }}">Home</a>
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ '/projects/' | relative_url }}">Projects</a>
-          <div class="dropdown-menu" role="menu" aria-label="Projects categories">
-            <a class="dropdown-link" href="{{ '/manufacturing/' | relative_url }}">Manufacturing &amp; Mechanical</a>
-            <a class="dropdown-link" href="{{ '/industrial-systems/' | relative_url }}">Industrial &amp; Systems</a>
-            <a class="dropdown-link" href="{{ '/data-ml/' | relative_url }}">Data Analytics &amp; ML</a>
+
+        <!-- Far left: PKJ logo -->
+        <a class="pkj-logo" href="{{ '/' | relative_url }}" aria-label="Home">PKJ</a>
+
+        <!-- Center: main nav links -->
+        <div class="pkj-nav-center">
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{ '/projects/' | relative_url }}">Projects</a>
+            <div class="dropdown-menu" role="menu" aria-label="Project categories">
+              <a class="dropdown-link" href="{{ '/manufacturing/' | relative_url }}">Manufacturing &amp; Mechanical</a>
+              <a class="dropdown-link" href="{{ '/industrial-systems/' | relative_url }}">Industrial &amp; Systems</a>
+              <a class="dropdown-link" href="{{ '/data-ml/' | relative_url }}">Data Analytics &amp; ML</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-link dropdown-link--all" href="{{ '/projects/' | relative_url }}">View all projects &rarr;</a>
+            </div>
           </div>
+
+          <a class="nav-link" href="{{ '/experience/' | relative_url }}">Experience</a>
+          <a class="nav-link" href="{{ '/resume/' | relative_url }}">Resume</a>
+
         </div>
-        <a class="nav-link" href="{{ '/experience/' | relative_url }}">Experience</a>
-        <a class="nav-link" href="{{ '/resume/' | relative_url }}">Resume</a>
-        <a class="nav-link" href="{{ '/contact/' | relative_url }}">Contact</a>
+
+        <!-- Far right: Contact pill + theme toggle -->
+        <div class="pkj-nav-right">
+          <a class="pkj-contact-pill" href="{{ '/contact/' | relative_url }}">Contact</a>
+
+          <button class="pkj-toggle" id="themeToggle" title="Toggle light/dark mode">
+            <span class="pkj-toggle-track">
+              <span class="pkj-toggle-thumb"></span>
+              <span class="pkj-toggle-sun" aria-hidden="true">&#9728;</span>
+              <span class="pkj-toggle-moon" aria-hidden="true">&#9790;</span>
+            </span>
+          </button>
+        </div>
+
       </nav>
     </header>
 
+    <!-- ── Inner page banner (suppressed on homepage) ────── -->
     {% unless page.permalink == "/" %}
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title }}</h1>
-      {% if site.description and site.description != "" %}
-        <h2 class="project-tagline">{{ site.description }}</h2>
-      {% endif %}
+    <header class="page-header pkj-inner-header" role="banner">
+      <div class="pkj-inner-header-content">
+        <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+        {% if page.description %}
+          <p class="pkj-page-tagline">{{ page.description }}</p>
+        {% endif %}
+      </div>
     </header>
     {% endunless %}
 
+    <!-- ── Page content ──────────────────────────────────── -->
     <main class="main-content" id="content" role="main">
       {{ content }}
     </main>
-    <footer class="site-footer">
-      <span class="site-footer-owner">
-        © {{ site.time | date: "%Y" }} Praharshith K Jamalapuram
-      </span>
+
+    <!-- ── Footer ────────────────────────────────────────── -->
+    <footer class="site-footer pkj-footer">
+      <div class="pkj-footer-inner">
+        <span class="pkj-footer-logo">PKJ</span>
+        <span class="pkj-footer-copy">&copy; {{ site.time | date: "%Y" }} Praharshith K Jamalapuram</span>
+        <div class="pkj-footer-links">
+          <a href="https://www.linkedin.com/in/kash0210/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/KaSho2" target="_blank" rel="noopener">GitHub</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </div>
+      </div>
     </footer>
+
+    <!-- ── Theme toggle script ───────────────────────────── -->
+    <script>
+    (function(){
+      var btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      function sync(){
+        var t = document.documentElement.getAttribute('data-theme');
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      sync();
+      btn.addEventListener('click', function(){
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('pkj-theme', next);
+        sync();
+      });
+    })();
+    </script>
+
   </body>
 </html>
