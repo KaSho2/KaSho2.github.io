@@ -1300,3 +1300,624 @@ html, body {
     display: none;
   }
 }
+/* ============================================================
+   PKJ Portfolio — Project Pages + Index Carousel  (append to custom.css)
+   ============================================================ */
+
+/* ── Project index pages ──────────────────────────────────── */
+
+.pkj-projects-page {
+  position: relative;
+  z-index: 1;
+}
+
+.pkj-projects-intro {
+  font-size: 14px;
+  color: var(--pkj-muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* Category filter pills */
+.pkj-filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.pkj-filter-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 0.5px solid var(--pkj-border);
+  color: var(--pkj-muted);
+  background: var(--pkj-surface);
+  text-decoration: none !important;
+  transition: all var(--pkj-transition);
+}
+
+.pkj-filter-pill:hover,
+.pkj-filter-pill--active {
+  background: var(--pkj-navy);
+  color: var(--pkj-bg) !important;
+  border-color: var(--pkj-navy);
+}
+
+/* Project card grid on index pages */
+.pkj-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 3rem;
+}
+
+.pkj-index-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  overflow: hidden;
+  background: var(--pkj-bg);
+  transition: transform var(--pkj-transition), border-color var(--pkj-transition), box-shadow var(--pkj-transition);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.pkj-index-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--pkj-gold);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+[data-theme="dark"] .pkj-index-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Carousel image panel */
+.pkj-card-carousel {
+  position: relative;
+  overflow: hidden;
+  background: var(--pkj-surface);
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.pkj-card-carousel img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
+
+.pkj-card-carousel img.pkj-carousel-active {
+  opacity: 1;
+}
+
+.pkj-card-carousel-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--pkj-subtle);
+}
+
+/* Card text body */
+.pkj-index-card-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pkj-index-card-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pkj-badge {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.pkj-badge--level-ms  { background: var(--pkj-surface-alt); color: var(--pkj-navy); border: 0.5px solid var(--pkj-border); }
+.pkj-badge--level-bt  { background: var(--pkj-surface); color: var(--pkj-muted); border: 0.5px solid var(--pkj-border); }
+.pkj-badge--academic  { background: #edf7ee; color: #2d6a35; border: 0.5px solid #b8deba; }
+.pkj-badge--company   { background: #fff4e5; color: #8a5000; border: 0.5px solid #f5d08a; }
+
+[data-theme="dark"] .pkj-badge--academic { background: #0d2b10; color: #66cc77; border-color: #1a4a1f; }
+[data-theme="dark"] .pkj-badge--company  { background: #2a1a00; color: #d4901a; border-color: #4a3000; }
+
+.pkj-index-card-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.pkj-index-card-desc {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+}
+
+.pkj-index-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pkj-index-card-skills {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pkj-index-skill {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  color: var(--pkj-subtle);
+}
+
+.pkj-index-card-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pkj-red) !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* ── Individual project pages ─────────────────────────────── */
+
+/* No decorative backgrounds on project pages */
+.page-inner .main-content::before,
+.page-inner .main-content::after { display: none !important; }
+
+.pkj-project-page {
+  font-family: var(--pkj-font-body);
+  max-width: 860px;
+}
+
+/* Project hero */
+.pkj-project-hero {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid var(--pkj-border);
+}
+
+.pkj-project-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.pkj-project-title {
+  font-family: var(--pkj-font-display);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--pkj-navy);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.pkj-project-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pkj-meta-item {
+  font-size: 12px;
+  color: var(--pkj-muted);
+}
+
+.pkj-meta-item strong {
+  color: var(--pkj-subtle) !important;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.pkj-meta-item a {
+  color: var(--pkj-red) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.pkj-meta-item a:hover { text-decoration: underline !important; }
+
+/* Main layout: content + sidebar */
+.pkj-project-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Project summary */
+.pkj-project-summary {
+  font-size: 14px;
+  color: var(--pkj-muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.pkj-project-summary p { margin-bottom: 0.75rem; }
+.pkj-project-summary p:last-child { margin-bottom: 0; }
+
+/* Skills section */
+.pkj-proj-section-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pkj-gold);
+  margin-bottom: 10px;
+}
+
+.pkj-project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 2rem;
+}
+
+.pkj-project-skill-tag {
+  font-size: 11px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  color: var(--pkj-navy);
+  font-weight: 400;
+}
+
+/* Image gallery */
+.pkj-project-gallery {
+  margin-bottom: 2rem;
+}
+
+.pkj-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pkj-gallery-item {
+  border-radius: var(--pkj-radius);
+  overflow: hidden;
+  border: 0.5px solid var(--pkj-border);
+  cursor: pointer;
+  transition: transform var(--pkj-transition), border-color var(--pkj-transition);
+  aspect-ratio: 4/3;
+  background: var(--pkj-surface);
+}
+
+.pkj-gallery-item:hover {
+  transform: scale(1.02);
+  border-color: var(--pkj-gold);
+}
+
+.pkj-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pkj-gallery-caption {
+  font-size: 10px;
+  color: var(--pkj-subtle);
+  text-align: center;
+  padding: 4px 4px 6px;
+  background: var(--pkj-surface);
+}
+
+/* Lightbox */
+.pkj-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+.pkj-lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.pkj-lightbox-inner img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--pkj-radius);
+  display: block;
+}
+
+.pkj-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pkj-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Project sidebar */
+.pkj-project-sidebar {
+  position: sticky;
+  top: 70px;
+}
+
+.pkj-sidebar-card {
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.pkj-sidebar-card:last-child { margin-bottom: 0; }
+
+.pkj-sidebar-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pkj-subtle);
+  margin-bottom: 10px;
+}
+
+/* PDF links in sidebar */
+.pkj-pdf-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  background: var(--pkj-bg);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius);
+  text-decoration: none !important;
+  margin-bottom: 7px;
+  transition: border-color var(--pkj-transition), transform var(--pkj-transition);
+}
+
+.pkj-pdf-link:last-child { margin-bottom: 0; }
+
+.pkj-pdf-link:hover {
+  border-color: var(--pkj-red);
+  transform: translateX(2px);
+}
+
+.pkj-pdf-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pkj-pdf-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  display: block;
+}
+
+.pkj-pdf-sub {
+  font-size: 10px;
+  color: var(--pkj-subtle);
+}
+
+/* Sidebar info rows */
+.pkj-sidebar-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.pkj-sidebar-row:last-child { margin-bottom: 0; }
+.pkj-sidebar-row-label { font-size: 10px; color: var(--pkj-subtle); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.pkj-sidebar-row-value { color: var(--pkj-text); font-weight: 400; }
+.pkj-sidebar-row-value a { color: var(--pkj-red) !important; text-decoration: none !important; font-weight: 500; }
+.pkj-sidebar-row-value a:hover { text-decoration: underline !important; }
+
+/* Research publications page */
+.pkj-research-page { position: relative; z-index: 1; }
+
+.pkj-pub-card {
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--pkj-gold);
+}
+
+.pkj-pub-journal {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--pkj-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 6px;
+}
+
+.pkj-pub-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--pkj-navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.pkj-pub-authors {
+  font-size: 12px;
+  color: var(--pkj-muted);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.pkj-pub-desc {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.pkj-pub-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--pkj-surface-alt);
+  color: var(--pkj-navy);
+  border: 0.5px solid var(--pkj-border);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+  .pkj-index-card { grid-template-columns: 1fr; }
+  .pkj-card-carousel { width: 100%; height: 180px; }
+  .pkj-project-layout { grid-template-columns: 1fr; }
+  .pkj-project-sidebar { position: static; }
+  .pkj-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ── Beyond Engineering teaser card (homepage) ────────────── */
+
+.pkj-beyond-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--pkj-surface);
+  border: 0.5px solid var(--pkj-border);
+  border-radius: var(--pkj-radius-lg);
+  border-top: 3px solid var(--pkj-gold);
+  padding: 22px 26px;
+  text-decoration: none !important;
+  transition: transform var(--pkj-transition), border-color var(--pkj-transition), box-shadow var(--pkj-transition);
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.pkj-beyond-teaser:hover {
+  transform: translateY(-2px);
+  border-color: var(--pkj-gold);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+[data-theme="dark"] .pkj-beyond-teaser:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.pkj-beyond-teaser-left { flex: 1; }
+
+.pkj-beyond-teaser-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pkj-gold);
+  margin-bottom: 6px;
+}
+
+.pkj-beyond-teaser-title {
+  font-family: var(--pkj-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--pkj-navy);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.pkj-beyond-teaser-desc {
+  font-size: 13px;
+  color: var(--pkj-muted);
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 14px;
+  max-width: 520px;
+}
+
+.pkj-beyond-teaser-tags {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pkj-beyond-teaser-tags span {
+  font-size: 12px;
+  color: var(--pkj-subtle);
+  transition: color var(--pkj-transition);
+}
+
+.pkj-beyond-teaser:hover .pkj-beyond-teaser-tags span {
+  color: var(--pkj-muted);
+}
+
+.pkj-beyond-teaser-arrow {
+  font-size: 32px;
+  color: var(--pkj-gold);
+  opacity: 0.5;
+  transition: opacity var(--pkj-transition), transform var(--pkj-transition);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pkj-beyond-teaser:hover .pkj-beyond-teaser-arrow {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 480px) {
+  .pkj-beyond-teaser-arrow { display: none; }
+}
