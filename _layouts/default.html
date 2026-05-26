@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
     </title>
-
-    <!-- Cayman theme CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
   </head>
-
   <body>
-    <!-- Top Navigation -->
     <header class="topnav-wrap">
       <nav class="topnav">
         <a class="nav-brand" href="{{ '/' | relative_url }}">Home</a>
-
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{{ '/projects/' | relative_url }}">Projects</a>
           <div class="dropdown-menu" role="menu" aria-label="Projects categories">
@@ -26,27 +21,24 @@
             <a class="dropdown-link" href="{{ '/data-ml/' | relative_url }}">Data Analytics &amp; ML</a>
           </div>
         </div>
-
-        <!-- NEW Experience link -->
         <a class="nav-link" href="{{ '/experience/' | relative_url }}">Experience</a>
-
         <a class="nav-link" href="{{ '/resume/' | relative_url }}">Resume</a>
         <a class="nav-link" href="{{ '/contact/' | relative_url }}">Contact</a>
       </nav>
     </header>
 
-    <!-- Page Header (Cayman) -->
+    {% unless page.permalink == "/" %}
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title }}</h1>
       {% if site.description and site.description != "" %}
         <h2 class="project-tagline">{{ site.description }}</h2>
       {% endif %}
     </header>
+    {% endunless %}
 
     <main class="main-content" id="content" role="main">
       {{ content }}
     </main>
-
     <footer class="site-footer">
       <span class="site-footer-owner">
         © {{ site.time | date: "%Y" }} Praharshith K Jamalapuram
