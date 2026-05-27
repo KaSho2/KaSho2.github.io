@@ -1921,3 +1921,52 @@ html, body {
 @media (max-width: 480px) {
   .pkj-beyond-teaser-arrow { display: none; }
 }
+/* ============================================================
+   PKJ — Polish Patch (append to bottom of custom.css)
+   ============================================================ */
+
+/* ── Viewport centering fix ──────────────────────────────── */
+/* Cayman's main-content needs horizontal padding + centering */
+.main-content {
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* ── Button text fix (Cayman link color overrides white) ─── */
+a.pkj-btn-primary,
+a.pkj-btn-primary:link,
+a.pkj-btn-primary:visited,
+a.pkj-btn-primary:hover,
+a.pkj-btn-primary:active,
+.main-content a.pkj-btn-primary,
+.main-content a.pkj-btn-primary:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* ── Status card icons — uniform CSS dot, hides Unicode ──── */
+.pkj-status-icon {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  min-width: 6px !important;
+  border-radius: 50% !important;
+  background: var(--pkj-gold) !important;
+  flex-shrink: 0 !important;
+  margin-top: 5px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+}
