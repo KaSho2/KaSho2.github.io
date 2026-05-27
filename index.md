@@ -32,26 +32,26 @@ permalink: /
     <div class="pkj-hero-sidebar">
       <div class="pkj-photo-frame">
         <img
-          src="/assets/images/headshot.jpg"
+          src="/images/PKJ.png"
           alt="Praharshith K Jamalapuram"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="pkj-photo-initials">PKJ</div>
       </div>
       <div class="pkj-status-card">
         <div class="pkj-status-row">
-          <span class="pkj-status-icon">&#9679;</span>
+          <span class="pkj-status-icon"></span>
           <div class="pkj-status-label"><strong>Location</strong><span>Madison, WI</span></div>
         </div>
         <div class="pkj-status-row">
-          <span class="pkj-status-icon">&#9670;</span>
+          <span class="pkj-status-icon"></span>
           <div class="pkj-status-label"><strong>Status</strong><span>Open &mdash; PhD / MS applications</span></div>
         </div>
         <div class="pkj-status-row">
-          <span class="pkj-status-icon">&#9632;</span>
+          <span class="pkj-status-icon"></span>
           <div class="pkj-status-label"><strong>Fields</strong><span>ISE &nbsp;&middot;&nbsp; Mechanical Eng.</span></div>
         </div>
         <div class="pkj-status-row">
-          <span class="pkj-status-icon">&#9670;</span>
+          <span class="pkj-status-icon"></span>
           <div class="pkj-status-label"><strong>Alma maters</strong><span>UW&ndash;Madison &nbsp;&middot;&nbsp; SASTRA</span></div>
         </div>
       </div>
@@ -165,7 +165,7 @@ permalink: /
       <span class="pkj-section-line"></span>
     </div>
 
-    <a class="pkj-beyond-teaser" href="BEYOND_ENGINEERING_SITE_URL" target="_blank" rel="noopener">
+    <a class="pkj-beyond-teaser" href="#" target="_blank" rel="noopener">
       <div class="pkj-beyond-teaser-left">
         <div class="pkj-beyond-teaser-label">There's more to the story</div>
         <div class="pkj-beyond-teaser-title">Beyond Engineering &rarr;</div>

@@ -6,11 +6,9 @@ permalink: /experience/
 
 <div class="pkj-experience-page">
 
-  <!-- ── Internships ──────────────────────────────────────── -->
   <div class="pkj-exp-section">
     <div class="pkj-exp-section-title">Internships</div>
     <div class="pkj-timeline">
-
       <div class="pkj-timeline-item">
         <div class="pkj-timeline-dot"></div>
         <div class="pkj-exp-role">Mechanical Engineering Intern</div>
@@ -31,11 +29,9 @@ permalink: /experience/
           <span class="pkj-exp-skill">Industrial Systems</span>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ── Leadership & Operations ─────────────────────────── -->
   <div class="pkj-exp-section">
     <div class="pkj-exp-section-title">Leadership &amp; Operations</div>
     <div class="pkj-timeline">
@@ -85,7 +81,6 @@ permalink: /experience/
     </div>
   </div>
 
-  <!-- ── Technical & Extra-Curricular ────────────────────── -->
   <div class="pkj-exp-section">
     <div class="pkj-exp-section-title">Technical &amp; Extra-Curricular</div>
     <div class="pkj-timeline">
@@ -120,7 +115,7 @@ permalink: /experience/
         </div>
         <ul class="pkj-exp-bullets">
           <li>Contributed to anti-Ackermann steering system and double wishbone suspension design for a fully electric off-road vehicle.</li>
-          <li>Ran iterative stress analysis and simulation-driven design refinements — the same continuous optimization loop that high-performance motorsports is built on.</li>
+          <li>Ran iterative stress analysis and simulation-driven design refinements.</li>
         </ul>
         <div class="pkj-exp-skills">
           <span class="pkj-exp-skill">Mechanical Design</span>
@@ -140,7 +135,7 @@ permalink: /experience/
         </div>
         <ul class="pkj-exp-bullets">
           <li>Worked on battery-run quadcopter UAV design using SolidWorks, deployed at national and state level drone racing competitions.</li>
-          <li>Also developed liquid fuel-driven UAVs for agricultural surveying and pesticide spraying — a very different design problem.</li>
+          <li>Also developed liquid fuel-driven UAVs for agricultural surveying and pesticide spraying.</li>
         </ul>
         <div class="pkj-exp-skills">
           <span class="pkj-exp-skill">UAV Design</span>
@@ -151,15 +146,6 @@ permalink: /experience/
       </div>
 
     </div>
-  </div>
-
-  <!-- ── Note ───────────────────────────────────────────────── -->
-  <div class="pkj-callout">
-    <div class="pkj-callout-label">Note for reviewers</div>
-    <p class="pkj-callout-text" style="font-style:normal">
-      This page covers real-world leadership, operations, and technical involvement outside of coursework.
-      Academic and research project details live separately under the Projects section.
-    </p>
   </div>
 
 </div>

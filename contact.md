@@ -55,26 +55,11 @@ permalink: /contact/
     <span class="pkj-section-line"></span>
   </div>
 
-  <ul class="pkj-interests-list" style="margin-bottom:2rem">
+  <ul class="pkj-interests-list">
     <li>PhD or MS research opportunities in ISE or Mechanical Engineering</li>
     <li>Conversations around manufacturing systems, process optimization, or AI-assisted engineering</li>
     <li>Collaborative projects at the intersection of data, systems, and physical engineering</li>
     <li>Early-career engineering and analytics roles while applications are active</li>
   </ul>
-
-  <div class="pkj-section-head">
-    <span class="pkj-section-num">03 /</span>
-    <span class="pkj-section-title">A quick note</span>
-    <span class="pkj-section-line"></span>
-  </div>
-
-  <div class="pkj-callout" style="margin-bottom:1rem">
-    <div class="pkj-callout-label">For recruiters and professors</div>
-    <p class="pkj-callout-text" style="font-style:normal">
-      If you're going through this portfolio as part of a review process, feel free to reach out directly.
-      I'm happy to walk through any project in detail, share additional context, or just get on a call.
-      The projects section has full case studies, and the resume page has two versions depending on what you need.
-    </p>
-  </div>
 
 </div>
